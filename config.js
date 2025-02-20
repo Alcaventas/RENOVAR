@@ -13,8 +13,8 @@ import { en, es, id, ar, pt, de, it } from './lib/idiomas/total-idiomas.js'
 // EN ➜ Add the Bot number as priority first
 // EN ➜ If you want to receive reports you must use the three parameters (Number, name and true)
 global.owner = [ 
-['593968263524', 'Gata Dios', true],
-['5492266613038'], 
+['59169082575', 'Alba070503', true],
+['59169214837'], 
 ['5214774444444'], 
 ['595976126756'],
 ['593968585383']]
@@ -27,8 +27,8 @@ global.mods = []
 global.isBaileysFail = true
 global.baileys = '@whiskeysockets/baileys'
 
-global.packname = '© Evolution Global Bots'
-global.author = 'Gata Dios'
+global.packname = 'FICCT BOT 🤖'
+global.author = 'Alba070503'
 
 // ❰❰ methodCode ❱❱
 // [ES] > Agregue el número del Bot en "botNumberCode" si desea recibir código de 8 dígitos sin registrar el número en la consola.
@@ -54,14 +54,14 @@ global.maxwarn = '3' // máxima advertencias
 
 // IDs de canales
 global.ch = {
-ch1: '120363336642332098@newsletter',
-ch2: '120363160031023229@newsletter',
-ch3: '120363169294281316@newsletter',
-ch4: '120363203805910750@newsletter',
-ch5: '120363302472386010@newsletter',
-ch6: '120363301598733462@newsletter',
-ch7: '120363190430436554@newsletter',
-ch8: '120363374372683775@newsletter', 
+ch1: '120363314543492849@newsletter',
+ch2: '120363314543492849@newsletter',
+ch3: '120363314543492849@newsletter',
+ch4: '120363314543492849@newsletter',
+ch5: '120363314543492849@newsletter',
+ch6: '120363314543492849@newsletter',
+ch7: '120363314543492849@newsletter',
+ch8: '120363314543492849@newsletter', 
 }
 
 //skyUltraPlus
@@ -71,22 +71,22 @@ global.yt2 = "https://youtube.com/@sky-ultra-plus"
 global.patreon = "https://patreon.com/SkyUltraPlus"
   
 // redes
-global.tk = 'https://www.tiktok.com/@gata_dios'
-global.ths = 'https://www.threads.net/@gata_dios'
-global.yt = 'https://youtube.com/@gatadios'
-global.ig = 'https://www.instagram.com/gata_dios'
+global.tk = 'https://tiktok.com/@u.ficct'
+global.ths = 'https://www.threads.net/@u.ficct'
+global.yt = 'https://youtube.com/@Alba070503'
+global.ig = 'https://www.instagram.com/Alba070503YT'
 global.md = 'https://github.com/GataNina-Li'
-global.fb = 'https://www.facebook.com/groups/872989990425789'
-global.paypal = 'https://paypal.me/OficialGD'
+global.fb = 'https://www.facebook.com/u.ficct'
+global.paypal = 'https://paypal.me/Alba070503'
 global.asistencia = 'https://wa.me/message/MEKOUFBEOG5ED1'
-global.tg = 'https://t.me/globalgb' // canal
+global.tg = 'https://t.me/Alba070503' // canal
 
 // canales
-global.canal1 = "https://whatsapp.com/channel/0029Va4QjH7DeON0ePwzjS1A"
-global.canal2 = "https://whatsapp.com/channel/0029Va4QjH7DeON0ePwzjS1A"
-global.canal3 = "https://whatsapp.com/channel/0029VaKn22pDJ6GwY61Ftn15"
-global.canal4 = "https://whatsapp.com/channel/0029VabS4KD8KMqeVXXmkG1D"
-global.canal5 = "https://whatsapp.com/channel/0029VatPwXw7Noa8n1Vinx3g"
+global.canal1 = "https://whatsapp.com/channel/0029VaoYlNb2Jl8NhnZuL80M"
+global.canal2 = "https://whatsapp.com/channel/0029VaoYlNb2Jl8NhnZuL80M"
+global.canal3 = "https://whatsapp.com/channel/0029VaoYlNb2Jl8NhnZuL80M"
+global.canal4 = "https://whatsapp.com/channel/0029VaoYlNb2Jl8NhnZuL80M"
+global.canal5 = "https://whatsapp.com/channel/0029VaoYlNb2Jl8NhnZuL80M"
 
 // Imágenes en la nube
 global.img = 'https://qu.ax/ZNrwt.jpeg'
@@ -95,13 +95,13 @@ global.img3 = 'https://qu.ax/sQfSS.jpg'
 global.img4 = 'https://qu.ax/fCVpY.jpg'
 global.img5 = 'https://qu.ax/nWgle.jpg'
 
-global.canalIdGB = ["120363160031023229@newsletter", "120363169294281316@newsletter", "120363203805910750@newsletter", "120363302472386010@newsletter", "120363374372683775@newsletter", "120363336642332098@newsletter", "120363190430436554@newsletter"]
-global.canalNombreGB = ["INFINITY-WA 💫", "GB - UPDATE 🐈", "Tips sobre GataBot 🤩", "NEW PROJECT: YartexBot-MD ✨", "🌹 Pσҽƚιx ✨ Sƚҽʅʅαɾ 😎 Fυɳ", "GataBot Test", "༻🅖🅔🅝ⓑⓛ༺"]
+global.canalIdGB = ["120363314543492849@newsletter", "120363314543492849@newsletter", "120363314543492849@newsletter", "120363314543492849@newsletter", "120363314543492849@newsletter", "120363314543492849@newsletter", "120363314543492849@newsletter"]
+global.canalNombreGB = ["U.FICCT CHANNEL🐧", "Powered @Alba070503", "U.ficct", "U.ficct", "FICCT BOT 🐧", "U.FICCT", "U.FICCT"]
   
 global.WC = {
-infinity: { name: "INFINITY-WA 💫", id: "120363160031023229@newsletter", link: "https://whatsapp.com/channel/0029Va4QjH7DeON0ePwzjS1A", command: "suginfinity" },
-poetix: { name: "🌹 Pσҽƚιx ✨ Sƚҽʅʅαɾ 😎 Fυɳ", id: "120363374372683775@newsletter", link: "https://whatsapp.com/channel/0029VayNseN2phHUJygRvH3H", command: "sugpoetix" },
-gatabot: { name: "GataBot Test", id: "120363336642332098@newsletter", link: "https://whatsapp.com/channel/0029VatPwXw7Noa8n1Vinx3g", command: "suggatabot" }
+infinity: { name: "U.FICCT", id: "120363314543492849@newsletter", link: "https://whatsapp.com/channel/0029VaoYlNb2Jl8NhnZuL80M", command: "sugficct" },
+poetix: { name: "U.ficct", id: "120363314543492849@newsletter", link: "https://whatsapp.com/channel/0029VaoYlNb2Jl8NhnZuL80M", command: "sugcanal" },
+gatabot: { name: "Alba070503", id: "120363314543492849@newsletter", link: "https://whatsapp.com/channel/0029VaoYlNb2Jl8NhnZuL80M", command: "sugalba" }
 }
 
 global.img = 'https://qu.ax/nWgle.jpg'

@@ -99,15 +99,15 @@ if (chat) {
 if (!('isBanned' in chat)) chat.isBanned = false    
 if (!('welcome' in chat)) chat.welcome = false            
 if (!('detect' in chat)) chat.detect = true                    
-if (!('sWelcome' in chat)) chat.sWelcome = ''            
-if (!('sBye' in chat)) chat.sBye = ''                    
-if (!('sPromote' in chat)) chat.sPromote = ''              
-if (!('sDemote' in chat)) chat.sDemote = '' 
+if (!('sWelcome' in chat)) chat.sWelcome = false            
+if (!('sBye' in chat)) chat.sBye = false                   
+if (!('sPromote' in chat)) chat.sPromote = false             
+if (!('sDemote' in chat)) chat.sDemote = false 
 if (!('delete' in chat)) chat.delete = false                      
 if (!('antiver' in chat)) chat.viewonce = false         
 if (!('modoadmin' in chat)) chat.modoadmin = false
 if (!('autorespond' in chat)) chat.autorespond = true     
-if (!('antiLink' in chat)) chat.antiLink = true
+if (!('antiLink' in chat)) chat.antiLink = false
 if (!('antiLink2' in chat)) chat.antiLink2 = false    
 if (!('antiTiktok' in chat)) chat.antiTiktok = false
 if (!('antiYoutube' in chat)) chat.antiYoutube = false
@@ -125,15 +125,15 @@ global.db.data.chats[m.chat] = {
 isBanned: false,
 welcome: false,
 detect: true,
-sWelcome: '',
-sBye: '',
+sWelcome: false,
+sBye: false,
 sPromote: '',
 sDemote: '', 
 delete: false,
 antiver: false,
 modoadmin: false,
 autorespond: true,
-antiLink: true,
+antiLink: false,
 antiLink2: false,	
 antiTiktok: false,
 antiYoutube: false,

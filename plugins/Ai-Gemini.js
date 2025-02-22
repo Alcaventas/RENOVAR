@@ -1,20 +1,25 @@
-import fetch from 'node-fetch'
+import fetch from 'node-fetch';
 
-var handler = async (m, { text,  usedPrefix, command }) => {
+const handler = async (m, { text }) => {
+  if (!text) {
+    return conn.reply(m.chat, '❀ Ingrese una petición para que Gemini lo responda.', m);
+  }
 
-if (!text) { return conn.reply(m.chat, `❀ Ingrese una petición para que Gemini lo responda.`, m)}
-try {
-await m.react(rwait)
-var apii = await fetch(`https://apis-starlights-team.koyeb.app/starlight/gemini?text=${text}`)
-var res = await apii.json()
-await conn.reply(m.chat, res.result, m)
-await m.react(done)
-} catch {
-await m.react('❎')
-await conn.reply(m.chat, `✘ Gemini no puede responder a esa pregunta.`, m)
-}}
-handler.command = ['gemini']
-handler.help = ['gemini']
-handler.tags = ['ai']
+  try {
+    await m.react(rwait);
+    const response = await fetch(`https://apis-starlights-team.koyeb.app/starlight/gemini?text=${encodeURIComponent(text)}`);
+    const { result } = await response.json();
+    
+    await conn.reply(m.chat, result, m);
+    await m.react(done);
+  } catch (e) {
+    await m.react(error);
+    await conn.reply(m.chat, '✘ Gemini no puede responder a esa pregunta.', m);
+  }
+};
 
-export default handler
+handler.command = ['gemini'];
+handler.help = ['gemini'];
+handler.tags = ['ai'];
+
+export default handler;

@@ -11,7 +11,9 @@ const handler = async (m, { conn, text }) => {
     const response = await fetch(url);
     const json = await response.json();
 
-    if (!json || !json.response) {
+    console.log('Respuesta de la API:', json); // Verifica la respuesta en la consola
+
+    if (!json || typeof json !== 'object' || !json.response) {
       throw new Error('Respuesta inválida de la API');
     }
 

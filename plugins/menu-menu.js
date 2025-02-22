@@ -1,122 +1,84 @@
-import fs, { promises } from 'fs'
-import fetch from 'node-fetch'
-let handler = async (m, { conn, usedPrefix, command }) => {
-try {
-let d = new Date(new Date + 3600000)
-let locale = 'es'
-let week = d.toLocaleDateString(locale, { weekday: 'long' })
-let date = d.toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' })
-let _uptime = process.uptime() * 1000
-let uptime = clockString(_uptime)
-let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length 
-let more = String.fromCharCode(8206)
-let readMore = more.repeat(850)   
-let taguser = conn.getName(m.sender)
-let user = global.db.data.users[m.sender]
-let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }
-let menu = `
-∴∴∴∴∴∴∴∴∴∴∴∴∴∴∴∴∴
-@${m.sender.split("@")[0]}
-๑°°°°۞°°°°°°°°۞°°°°°°°°۞°°°°๑
+import fetch from 'node-fetch';
 
-⚠️ _Algunos comandos pueden no funcionar, este bot es beta, puedes mandar sugerencias con el comando:_ \`${usedPrefix}solicitar\`
+const handler = async (m, { conn, usedPrefix, __dirname }) => {
+  if (usedPrefix === 'a' || usedPrefix === 'A') return;
+  try {
+    const pp = 'https://qu.ax/kbRxS.png'; 
+    const vn = './media/menu.mp3';
+    const d = new Date(new Date() + 3600000);
+    const locale = 'es';
+    const date = d.toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' });
+    const uptime = clockString(process.uptime() * 1000);
+    const taguser = '@' + m.sender.split('@')[0];
 
-:･ﾟ✵ :･ﾟ✧ :･ﾟ✵ *:･ﾟ✧:･ﾟ✵ :･ﾟ✧:･ﾟ
-┌──── ∘°Ξ°∘ ────┐
-│ *Únete a nuestro canal de Telegram*
-│ t.me/globalgb
-└──── °∘Ξ∘° ────┘
-:･ﾟ✵ :･ﾟ✧ :･ﾟ✵ *:･ﾟ✧:･ﾟ✵ :･ﾟ✧:･ﾟ
+    const { key } = await conn.sendMessage(m.chat, { text: `Cargando menú, espera un momento...` }, { quoted: m });
 
-> ∵ Descubre más sobre este bot
-\`${usedPrefix}suginfo\`
+    const menuText = `
+╭━〔 *FicctBot - Menú* 〕━⬣
+┃👤 *Usuario:* ${taguser}
+┃📅 *Fecha:* ${date}
+┃⏳ *Tiempo Activo:* ${uptime}
+┃👑 *Owner:* Alba070503
+╰━━━━━━━━━━━━⬣
+Bienvenido Al menu de Ficct-Bot
+> Mallas De las Carreras:
+#sistema
+#informatica
+#robotica
+#redes
 
-> ∵ Sugiere algo para este bot
-\`${usedPrefix}opinar\`
+> PDF Recomendaciones Docentes & Maestro Oferta
+#recomendaciones
+#maestro
 
-> ∵ Promociona te gratis en canales
-\`${usedPrefix}suginfinity\`
-${WC.infinity.link}
+> Numeros Oficiales De Administradores de Grupo de WhatsApp 
+#numsem1 (semestre 1)
+#numsem2 (semestre 2)
+#numsem3 (semestre 3)
+#numsem4 (semestre 4)
+#numsem5 (semestre 5)
+#numsem6 (semestre 6)
+#numsem7 (semestre 7)
+#numsem8 (semestre 8)
+#numsem9 (semestre 9)
+#numsem10 (semestre 10)
+#numelectiva (materia electiva)
 
-\`${usedPrefix}sugpoetix\`
-${WC.poetix.link}
+> información Jefes De Carrera
+#jefesistemas (Jefe de carrera sistema)
+#jefeinfo (Jefe de carrera informática)
+#jeferedes (Jefe de carrera redes)
+#jeferobotica (Jefe de carrera robótica)
 
-\`${usedPrefix}suggatabot\`
-${WC.gatabot.link}
+> Inteligencia Artificial 
+#ia (chatgpt)
+#gemini (Google Ai)
+#blackai (BlackboxAi)
+#deepseek (Deepseek Ai)
+#claude (Claude Ai)
+#iameta (Meta Ai)
 
-> ∵ Descubre tú reputación 
-\`${usedPrefix}reputacion\`
 
-> ∵ Mira quienes están en el top
-\`${usedPrefix}top\`
+    `.trim();
 
-> ∵ Recolecta gratis puntos de reputación 
-\`${usedPrefix}recolectar\`
+    const fkontak = {
+      key: { remoteJid: 'status@broadcast', fromMe: false, id: 'Halo' },
+      message: { contactMessage: { vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Bot;;;\nFN:FicctBot\nTEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nEND:VCARD` } }
+    };
 
-> ∵ Intercambia Estrellas por pts. de reputación
-\`${usedPrefix}trueque\`
+    conn.sendMessage(m.chat, { image: { url: pp }, caption: menuText, mentions: [m.sender] }, { quoted: fkontak });
+  } catch (e) {
+    conn.reply(m.chat, '❗ *Error:* No se pudo enviar el menú. Reporta esto al propietario del bot.', m);
+  }
+};
 
-> ∵ Beneficíate de un rol especial
-\`${usedPrefix}vip\`
-
-> ∵ (Opcional) Verificate y gana estrellas
-\`${usedPrefix}verificar\`
-
-> ∵ Conoce nuestros patrocinadores
-\`${usedPrefix}patrocinadores\`
-
-> ∵ Contacta con los que hicieron posible esto
-\`${usedPrefix}creadores\`
-
-> ∵ Ayúdanos a mejorar lo que ofrecemos
-\`${usedPrefix}donar\`
-_Recompesas para quienes donen, reclama tú recompensa a los creadores_
-
-> ∵ Impulsa tus publicaciones
-\`${usedPrefix}tienda\`
-
-❪✧❫━━━━━━━━━━━━━━❪✧❫
-
-*🤗 ¿Te gustaría colaborar con nosotros?*
-_Contacta con los creadores_
-
-_© Evolution Global Bots_
-∴∴∴∴∴∴∴∴∴∴∴∴∴∴∴∴∴
- `.trim()
-    
-try {
-await conn.sendMessage(m.chat, { image: { url: ImgRandom }, caption: menu, mentions: [m.sender], contextInfo: fakeChannel }, { quoted: fkontak })
-} catch (error) {
-console.log(error)
-}} catch (e) {
-await m.reply("Algo salió mal, intente más tarde")
-console.log(e)
-}}
-
-handler.command = /^(menu|menú|memu|memú|help|info|comandos|2help|menu1.2|ayuda|commands|commandos|menucompleto|allmenu|allm|m|\?)$/i
-export default handler
+handler.command = /^(menu|menú|help|info|comandos|allmenu|ayuda|commands)$/i;
+handler.fail = null;
+export default handler;
 
 function clockString(ms) {
-let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
-let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
-let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
-return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')}
-
-/*await conn.sendMessage(m.chat, { video: { url: vi.getRandom() }, gifPlayback: true, caption: menu,
-contextInfo: {
-mentionedJid: [m.sender],
-isForwarded: true,
-forwardedNewsletterMessageInfo: {
-newsletterJid: '120363169294281316@newsletter',
-newsletterName: "GB - UPDATE ✨",
-serverMessageId: -1
-},
-forwardingScore: 999,
-externalAdReply: {
-title: gt,
-body: wm,
-thumbnailUrl: img2,
-sourceUrl: md,
-mediaType: 1,
-renderLargerThumbnail: false
-}}})*/
+  const h = Math.floor(ms / 3600000);
+  const m = Math.floor((ms % 3600000) / 60000);
+  const s = Math.floor((ms % 60000) / 1000);
+  return [h, m, s].map(v => v.toString().padStart(2, '0')).join(':');
+}

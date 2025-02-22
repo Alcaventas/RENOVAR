@@ -118,5 +118,5 @@ break
 
 handler.command = /^(infogrupo|gro?upinfo|info(gro?up|gc)|admins|@admins|dmins|enlace|link(gro?up)?|saludar|abrazar)$/i
 handler.group = true
-handler.register = true
+handler.register = false
 export default handler

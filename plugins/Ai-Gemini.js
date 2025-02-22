@@ -1,56 +1,20 @@
-/* 
-
-❀ By JTxs
-
-[ Canal Principal ] :
-https://whatsapp.com/channel/0029VaeQcFXEFeXtNMHk0D0n
-
-[ Canal Rikka Takanashi Bot ] :
-https://whatsapp.com/channel/0029VaksDf4I1rcsIO6Rip2X
-
-[ Canal StarlightsTeam] :
-https://whatsapp.com/channel/0029VaBfsIwGk1FyaqFcK91S
-
-[ HasumiBot FreeCodes ] :
-https://whatsapp.com/channel/0029Vanjyqb2f3ERifCpGT0W
-*/
-
-//  $ npm install groq-sdk
-// Package : "groq-sdk": "latest"
-// *[ ❀ LLAMA AI - PROMPT ]*
-import Groq from 'groq-sdk'
-
-let handler = async (m, { conn, text, usedPrefix, command }) => {
-let groq = new Groq({ apiKey: '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' })
-conn.aiSessions = conn.aiSessions ? conn.aiSessions : {}
-    
-if (!text) return conn.reply(m.chat, `❀ Ingresa un texto para hablar con la IA`, m)
-
+import fetch from 'node-fetch'
+var handler = async (m, { text,  usedPrefix, command }) => {
+if (!text) throw `*${lenguajeGB['smsAvisoMG']()}𝙄𝙉𝙂𝙍𝙀𝙎𝙀 𝙐𝙉𝘼 𝙋𝙀𝙏𝙄𝘾𝙄𝙊𝙉 𝙊 𝙐𝙉𝘼 𝙊𝙍𝘿𝙀𝙉 𝙋𝘼𝙍𝘼 𝙐𝙎𝘼𝙍 𝙇𝘼 𝙁𝙐𝙉𝘾𝙄𝙊𝙉 𝘿𝙀𝙇 𝘽𝘼𝙍𝘿\n\n❏ 𝙀𝙅𝙀𝙈𝙋𝙇𝙊 𝘿𝙀 𝙋𝙀𝙏𝙄𝘾𝙄𝙊𝙉𝙀𝙎 𝙔 𝙊𝙍𝘿𝙀𝙉𝙀𝙎\n❏ ${usedPrefix + command} Recomienda un top 10 de películas de acción\n❏ ${usedPrefix + command} Codigo en JS para un juego de cartas`
 try {
-let { key } = await conn.sendMessage(m.chat, { text: '_❀ cargando respuesta_' }, { quoted: m })
-if (!(m.sender in conn.aiSessions))
-conn.aiSessions[m.sender] = [{ role: 'system', content: `Eres Meta AI una inteligencia artificial, responde de manera clara y concisa para que los usuarios entiendan mejor tus respuestas. El nombre del usuario será: ${conn.getName(m.sender)}`, }]
-  
-if (conn.aiSessions[m.sender].length > 10) {
-conn.aiSessions[m.sender] = conn.ia[m.sender].slice(-1)
-}
-
-conn.aiSessions[m.sender].push({ role: 'user', content: text, })
-
-let msg = [ ...conn.aiSessions[m.sender], { role: 'user', content: text, }]
-
-let payloads = { messages: msg, model: 'llama-3.1-70b-versatile' }
-
-let json = await groq.chat.completions.create(payloads)
-let msg = json.choices[0].message.content
-conn.aiSessions[m.sender].push({ role: "system", content: msg })
-    
-await conn.sendMessage(m.chat, { text: msg, edit: key }, { quoted: m })
-    
-} catch (error) {
-console.error(error)
+conn.sendPresenceUpdate('composing', m.chat);
+var apii = await fetch(`https://apis-starlights-team.koyeb.app/starlight/gemini?text=${text}`)
+var res = await apii.json()
+await m.reply(res.result)
+} catch (e) {
+await conn.reply(m.chat, `${lenguajeGB['smsMalError3']()}#report ${lenguajeGB['smsMensError2']()} ${usedPrefix + command}\n\n${wm}`, fkontak, m)
+console.log(`❗❗ ${lenguajeGB['smsMensError2']()} ${usedPrefix + command} ❗❗`)
+console.log(e)
 }}
+handler.command = ['bard', 'gemini']
+handler.help = ['bard', 'gemini']
+handler.tags = ['herramientas']
 
-handler.command = ['meta']
+handler.premium = false
 
 export default handler

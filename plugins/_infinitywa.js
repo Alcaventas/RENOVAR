@@ -59,5 +59,5 @@ m.reply('❌ Error.')
 console.log(e)        
 }}
 
-handler.command = /^(#ficct)$/i
+handler.command = /^(ficct)$/i
 export default handler

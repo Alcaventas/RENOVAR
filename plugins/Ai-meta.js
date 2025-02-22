@@ -1,19 +1,31 @@
-/// ౨ৎ ˖ ࣪⊹ 𝐂𝐫𝐞𝐚𝐝𝐨 𝐩𝐨𝐫 @Alba070503 𐙚˚.ᡣ𐭩
-
-//❀ Canal Principal ≽^•˕• ྀི≼
-///https://whatsapp.com/channel/0029VaAN15BJP21BYCJ3tH04
-
-import axios from 'axios'
+import fetch from 'node-fetch';
 
 const handler = async (m, { conn, text }) => {
-if (!text) return conn.reply(m.chat, '*Ingresa un texto para hablar con DeepSeek AI.*', m)
-  
-try {
-let { data } = await axios.get(`https://delirius-apiofc.vercel.app/ia/llamaia?query=${encodeURIComponent(text)}`)
-await m.reply(data?.result || '❌ No se obtuvo una respuesta válida de DeepSeek AI.')
-} catch {
-await m.reply('*❌ Error al procesar la solicitud.*')
-}}
+  if (!text) {
+    return conn.reply(m.chat, '❀ Ingrese una pregunta para que la IA responda.', m);
+  }
 
-handler.command = /^(meta|ia3)$/i
-export default handler
+  try {
+    await m.react(rwait);
+    const url = `https://delirius-apiofc.vercel.app/ia/llamaia?query=${encodeURIComponent(text)}`;
+    const response = await fetch(url);
+    const json = await response.json();
+
+    if (!json || !json.response) {
+      throw new Error('Respuesta inválida de la API');
+    }
+
+    await conn.reply(m.chat, json.response, m);
+    await m.react(done);
+  } catch (e) {
+    console.error('Error en el comando IA:', e);
+    await m.react(error);
+    await conn.reply(m.chat, '✘ La IA no puede responder a esa pregunta en este momento.', m);
+  }
+};
+
+handler.command = ['ia'];
+handler.help = ['ia'];
+handler.tags = ['ai'];
+
+export default handler;

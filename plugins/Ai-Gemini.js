@@ -10,7 +10,7 @@ var res = await apii.json()
 await conn.reply(m.chat, res.result, m)
 await m.react(done)
 } catch {
-await m.react(error)
+await m.react('❎')
 await conn.reply(m.chat, `✘ Gemini no puede responder a esa pregunta.`, m)
 }}
 handler.command = ['gemini']

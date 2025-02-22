@@ -1,28 +1,25 @@
 import fetch from 'node-fetch';
 
-const handler = async (m, { conn, text }) => {
+var handler = async (m, { text, usedPrefix, command }) => {
   if (!text) {
-    return conn.reply(m.chat, '❀ Ingrese una pregunta para que la IA responda.', m);
+    return conn.reply(m.chat, `❀ Ingrese una pregunta para que la IA responda.`, m);
   }
 
   try {
-    await m.react(rwait);
-    const url = `https://delirius-apiofc.vercel.app/ia/llamaia?query=${encodeURIComponent(text)}`;
-    const response = await fetch(url);
-    const json = await response.json();
-
-    console.log('Respuesta de la API:', json); // Verifica la respuesta en la consola
-
-    if (!json || typeof json !== 'object' || !json.response) {
+    await m.react('🤖');
+    
+    let res = await fetch(`https://delirius-apiofc.vercel.app/ia/llamaia?query=${encodeURIComponent(text)}`);
+    let json = await res.json();
+    
+    if (!json || !json.response) {
       throw new Error('Respuesta inválida de la API');
     }
 
     await conn.reply(m.chat, json.response, m);
     await m.react(done);
   } catch (e) {
-    console.error('Error en el comando IA:', e);
-    await m.react(error);
-    await conn.reply(m.chat, '✘ La IA no puede responder a esa pregunta en este momento.', m);
+    await m.react('☠️');
+    await conn.reply(m.chat, `✘ La IA no puede responder a esa pregunta en este momento.`, m);
   }
 };
 

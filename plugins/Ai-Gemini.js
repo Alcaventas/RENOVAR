@@ -51,6 +51,6 @@ await conn.sendMessage(m.chat, { text: msg, edit: key }, { quoted: m })
 console.error(error)
 }}
 
-handler.command = ['metaai']
+handler.command = ['meta']
 
 export default handler

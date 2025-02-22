@@ -8,7 +8,7 @@ let groupAdmins = groupMetadata.participants.filter(p => p.admin)
 const isAdmin = groupAdmins.some(admin => admin.id === m.sender)
   
 if (!isAdmin) return m.reply('*❌ No tienes permiso para usar este comando.*\n\n*Si crees que esto es un error contacta con el staff de este Bot*')
-if (!text && !m.quoted) return m.reply('*⚠️ Ingresa un mensaje o archivo a enviar.*\n\n*Permitido:*\n- Texto\n- Imagen\n- Video\n- Sticker\n- Audio\n\n_El mensaje que envie al canal será anónimo a menos que usted describa de parte de quien es el mensaje, se enviará sin diseños para evitar que parezca mensaje enviado por bot_\n\n_Si dejas de formar parte del staff perderás acceso a este comando, esto fue creado sólo para el Staff Infinity_\n\n_Todo lo que envie con este comando al canal será informado al grupo del staff, toma precaución para evitar problemas_')
+if (!text && !m.quoted) return m.reply('*⚠️ Ingresa un mensaje o archivo a enviar.*\n\n*Permitido:*\n- Texto\n- Imagen\n- Video\n- Sticker\n- Audio\n\n_El mensaje que envie al canal será anónimo a menos que usted describa de parte de quien es el mensaje, se enviará sin diseños para evitar que parezca mensaje enviado por bot_\n\n_Si dejas de formar parte del staff perderás acceso a este comando, esto fue creado sólo para el Staff_\n\n_Todo lo que envie con este comando al canal será informado al grupo del staff, toma precaución para evitar problemas_')
   
  let q = m.quoted ? m.quoted : m
  let mime = (q.msg || q).mimetype || q.mediaType || ''
@@ -59,5 +59,5 @@ m.reply('❌ Error.')
 console.log(e)        
 }}
 
-handler.command = /^(infinity)$/i
+handler.command = /^(#ficct)$/i
 export default handler

@@ -1,32 +1,36 @@
-import fetch from 'node-fetch';
+/* Llama Al By WillZek 
+- Powered By Free Codes Titan
+- https://whatsapp.com/channel/0029ValMlRS6buMFL9d0iQ0S
+*/
 
-var handler = async (m, { text, usedPrefix, command }) => {
-  if (!text) {
-    throw `*𝙄𝙉𝙂𝙍𝙀𝙎𝙀 𝙐𝙉𝘼 𝙋𝙀𝙏𝙄𝘾𝙄𝙊𝙉 𝙊 𝙐𝙉𝘼 𝙊𝙍𝘿𝙀𝙉*\n\n❏ *Ejemplo de uso:*\n${usedPrefix + command} Recomienda un top 10 de películas de acción\n${usedPrefix + command} Código en JS para un juego de cartas`;
-  }
+// [🧠] 𝗟𝗟𝗔𝗠𝗔 𝗔𝗜
 
-  try {
-    conn.sendPresenceUpdate('composing', m.chat);
+import fetch from 'node-fetch'
 
-    let res = await fetch(`https://delirius-apiofc.vercel.app/ia/llamaia?query=${encodeURIComponent(text)}`);
-    let json = await res.json();
+let handler = async (m, { conn, command, text, usedPrefix }) => {
+    if (!text) return conn.reply(m.chat, '🍭 Ingrese un texto para hablar con Llama AI', m)
+    try {
+        let api = await fetch(`https://delirius-apiofc.vercel.app/ia/llamaia?query=${text}`)
+        let json = await api.json()
+        let responseMessage = json.data;
 
-    if (!json || !json.response) {
-      throw new Error('Respuesta inválida de la API');
+        await conn.sendMessage(m.chat, {
+text: responseMessage,
+contextInfo: {
+externalAdReply: {
+title: '𝐋𝐥𝐚𝐦𝐚 𝐀𝐢 - 𝐈𝐧𝐭𝐞𝐥𝐢𝐠𝐞𝐧𝐜𝐢𝐚 𝐀𝐫𝐭𝐢𝐟𝐢𝐜𝐢𝐚𝐥',
+body: dev,
+thumbnailUrl: 'https://cloud.dorratz.com/files/3bc739df5766a9de8e7dfef65d6961f6',
+sourceUrl: channel,
+mediaType: 1,
+renderLargerThumbnail: true
+}}},
+{ quoted: m})
+    } catch (error) { 
+        console.error(error)
     }
+}
 
-    await m.reply(json.response);
-  } catch (e) {
-    await conn.reply(m.chat, `❌ *Ocurrió un error.* Reporta con: #report ${usedPrefix + command}\n\n${wm}`, fkontak, m);
-    console.log(`❗❗ Error en ${usedPrefix + command} ❗❗`);
-    console.log(e);
-  }
-};
+handler.command = ['llamaai', 'llama']
 
-handler.command = ['ia', 'chatbot'];
-handler.help = ['ia', 'chatbot'];
-handler.tags = ['ai'];
-
-handler.premium = false;
-
-export default handler;
+export default handler

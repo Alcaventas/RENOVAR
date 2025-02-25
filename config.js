@@ -13,10 +13,8 @@ import { en, es, id, ar, pt, de, it } from './lib/idiomas/total-idiomas.js'
 // EN ➜ Add the Bot number as priority first
 // EN ➜ If you want to receive reports you must use the three parameters (Number, name and true)
 global.owner = [ 
-['59169082575'], 
-['5214774444444'], 
-['595976126756'],
-['593968585383']]
+['528241050228'], //Alcashop.ff
+['528241264763']]
 
 global.mods = [] 
 global.prems = []
@@ -26,8 +24,8 @@ global.mods = []
 global.isBaileysFail = true
 global.baileys = '@whiskeysockets/baileys'
 
-global.packname = '© Evolution Global Bots'
-global.author = 'Gata Dios'
+global.packname = '𝘼𝙡𝙘𝙖|25'
+global.author = '𝘼𝙡𝙘𝙖|25'
 
 // ❰❰ methodCode ❱❱
 // [ES] > Agregue el número del Bot en "botNumberCode" si desea recibir código de 8 dígitos sin registrar el número en la consola.
@@ -45,8 +43,8 @@ global.lenguajeGB = es  //<-- Predeterminado en idioma Español
 // ES ➜ Está parte es para mostrar el contacto de alguien al usar #contacto
 // EN ➜ This part is to display someone's contact using #contact
 global.official = [ 
-['593968263524', 'Gata Dios 💻', 1], 
-['5214774444444', '𝗗𝗲𝘀𝗮𝗿𝗿𝗼𝗹𝗹𝗮𝗱𝗼𝗿 𝗢𝗳𝗶𝗰𝗶𝗮𝗹 💻', 1]] 
+['528241050228', '𝘼𝙡𝙘𝙖𝙨𝙝𝙤𝙥💻', 1], 
+['528241264763', '𝘼𝙡𝙘𝙖𝙨𝙝𝙤𝙥 𝗗𝗲𝘀𝗮𝗿𝗿𝗼𝗹𝗹𝗮𝗱𝗼𝗿 𝗢𝗳𝗶𝗰𝗶𝗮𝗹 💻', 1]] 
 
 global.multiplier = 60 // Cuanto más alto, más difícil subir de nivel
 global.maxwarn = '3' // máxima advertencias

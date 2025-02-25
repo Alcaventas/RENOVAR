@@ -62,46 +62,46 @@ ch8: '120363374372683775@newsletter',
 }
 
 //skyUltraPlus
-global.dash = "https://dash.skyultraplus.com"
-global.panel = "https://panel.skyultraplus.com"
-global.yt2 = "https://youtube.com/@sky-ultra-plus"
-global.patreon = "https://patreon.com/SkyUltraPlus"
+global.dash = "https://www.instagram.com/alcashop.ff"
+global.panel = "https://www.instagram.com/alcashop.ff"
+global.yt2 = "https://www.instagram.com/alcashop.ff"
+global.patreon = "https://www.instagram.com/alcashop.ff"
   
 // redes
-global.tk = 'https://www.tiktok.com/@gata_dios'
-global.ths = 'https://www.threads.net/@gata_dios'
-global.yt = 'https://youtube.com/@gatadios'
-global.ig = 'https://www.instagram.com/gata_dios'
-global.md = 'https://github.com/GataNina-Li'
-global.fb = 'https://www.facebook.com/groups/872989990425789'
-global.paypal = 'https://paypal.me/OficialGD'
-global.asistencia = 'https://wa.me/message/MEKOUFBEOG5ED1'
-global.tg = 'https://t.me/globalgb' // canal
+global.tk = 'https://www.instagram.com/alcashop.ff'
+global.ths = 'https://www.instagram.com/alcashop.ff'
+global.yt = 'https://www.instagram.com/alcashop.ff'
+global.ig = 'https://www.instagram.com/alcashop.ff'
+global.md = 'https://www.instagram.com/alcashop.ff'
+global.fb = 'https://www.instagram.com/alcashop.ff'
+global.paypal = 'https://www.instagram.com/alcashop.ff'
+global.asistencia = 'https://chat.whatsapp.com/ByQ7EqfLdCz0560VXNKDif'
+global.tg = 'https://chat.whatsapp.com/ByQ7EqfLdCz0560VXNKDif' // canal
 
 // canales
-global.canal1 = "https://whatsapp.com/channel/0029Va4QjH7DeON0ePwzjS1A"
-global.canal2 = "https://whatsapp.com/channel/0029Va4QjH7DeON0ePwzjS1A"
-global.canal3 = "https://whatsapp.com/channel/0029VaKn22pDJ6GwY61Ftn15"
-global.canal4 = "https://whatsapp.com/channel/0029VabS4KD8KMqeVXXmkG1D"
-global.canal5 = "https://whatsapp.com/channel/0029VatPwXw7Noa8n1Vinx3g"
+global.canal1 = "https://chat.whatsapp.com/ByQ7EqfLdCz0560VXNKDif"
+global.canal2 = "https://chat.whatsapp.com/ByQ7EqfLdCz0560VXNKDif"
+global.canal3 = "https://chat.whatsapp.com/ByQ7EqfLdCz0560VXNKDif"
+global.canal4 = "https://chat.whatsapp.com/ByQ7EqfLdCz0560VXNKDif"
+global.canal5 = "https://chat.whatsapp.com/ByQ7EqfLdCz0560VXNKDif"
 
 // Imágenes en la nube
-global.img = 'https://qu.ax/ZNrwt.jpeg'
-global.img2 = 'https://qu.ax/Kvbf.jpg'
-global.img3 = 'https://qu.ax/sQfSS.jpg'
-global.img4 = 'https://qu.ax/fCVpY.jpg'
-global.img5 = 'https://qu.ax/nWgle.jpg'
+global.img = 'https://qu.ax/hiJVO.jpeg'
+global.img2 = 'https://qu.ax/hiJVO.jpeg'
+global.img3 = 'https://qu.ax/hiJVO.jpeg'
+global.img4 = 'https://qu.ax/hiJVO.jpeg'
+global.img5 = 'https://qu.ax/hiJVO.jpeg'
 
 global.canalIdGB = ["120363160031023229@newsletter", "120363169294281316@newsletter", "120363203805910750@newsletter", "120363302472386010@newsletter", "120363374372683775@newsletter", "120363336642332098@newsletter", "120363190430436554@newsletter"]
 global.canalNombreGB = ["INFINITY-WA 💫", "GB - UPDATE 🐈", "Tips sobre GataBot 🤩", "NEW PROJECT: YartexBot-MD ✨", "🌹 Pσҽƚιx ✨ Sƚҽʅʅαɾ 😎 Fυɳ", "GataBot Test", "༻🅖🅔🅝ⓑⓛ༺"]
   
 global.WC = {
-infinity: { name: "INFINITY-WA 💫", id: "120363160031023229@newsletter", link: "https://whatsapp.com/channel/0029Va4QjH7DeON0ePwzjS1A", command: "suginfinity" },
-poetix: { name: "🌹 Pσҽƚιx ✨ Sƚҽʅʅαɾ 😎 Fυɳ", id: "120363374372683775@newsletter", link: "https://whatsapp.com/channel/0029VayNseN2phHUJygRvH3H", command: "sugpoetix" },
-gatabot: { name: "GataBot Test", id: "120363336642332098@newsletter", link: "https://whatsapp.com/channel/0029VatPwXw7Noa8n1Vinx3g", command: "suggatabot" }
+infinity: { name: "𝘼𝙡𝙘𝙖𝙨𝙝𝙤𝙥 💫", id: "120363160031023229@newsletter", link: "Wa.me/528246208447", command: "suginfinity" },
+poetix: { name: "𝘼𝙡𝙘𝙖𝙨𝙝𝙤𝙥", id: "120363374372683775@newsletter", link: "Wa.me/528246208447", command: "sugpoetix" },
+gatabot: { name: "𝘼𝙡𝙘𝙖|25 Test", id: "120363336642332098@newsletter", link: "Wa.me/528246208447", command: "suggatabot" }
 }
 
-global.img = 'https://qu.ax/nWgle.jpg'
+global.img = 'https://qu.ax/hiJVO.jpeg'
 
 let file = fileURLToPath(import.meta.url)
 watchFile(file, () => {
